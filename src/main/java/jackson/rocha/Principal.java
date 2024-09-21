@@ -11,6 +11,6 @@ public class Principal {
         var industria = new Industria("Alimentos da Vovó", 900_000, true);
 
         servicoFinanciamento.solicitarFinanciamento(fazenda, 600_000);
-//        servicoFinanciamento.solicitarFinanciamento(industria, 600_000);
+        servicoFinanciamento.solicitarFinanciamento(industria, 600_000);
     }
 }
