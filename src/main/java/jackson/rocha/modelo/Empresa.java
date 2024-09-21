@@ -25,6 +25,4 @@ public abstract class Empresa {
     public void setTotalFaturamento(double totalFaturamento) {
         this.totalFaturamento = totalFaturamento;
     }
-
-    public abstract double calcularLimiteAprovado();
 }
