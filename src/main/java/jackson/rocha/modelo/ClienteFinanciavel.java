@@ -2,16 +2,20 @@ package jackson.rocha.modelo;
 
 public interface ClienteFinanciavel {
 
+    double JUROS_BAIX0_RISCO = 1.0;
+    double JUROS_MEDIO_RISCO = 1.5;
+    double JUROS_ALTO_RISCO = 2.0;
+
     double calcularLimiteAprovado();
 
     default double calcularJuros(double valorSolicitado) {
         if (isFinanciamentoPequenoValor(valorSolicitado)) {
-            return 1.0;
+            return JUROS_BAIX0_RISCO;
         } else if (isFinanciamentoGrandeValor(valorSolicitado)) {
-            return 1.5;
-        } else {
-            return 2.0;
+            return JUROS_MEDIO_RISCO;
         }
+
+        return JUROS_ALTO_RISCO;
     }
 
     private static boolean isFinanciamentoGrandeValor(double valorSolicitado) {
